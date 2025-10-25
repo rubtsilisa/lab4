@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Моё задание 3 — адаптив</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header>
+    <div class="header-content">
+      <div class="logo-title">
+        <img src="images/Kub.png" alt="Логотип" class="logo">
+        <h1>Сайт Рубцовой В.Е.</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#main">Главная</a></li>
+          <li><a href="#inks1">Ссылки</a></li>
+          <li><a href="#form">Форма</a></li>
+          <li><a href="#tabl">Таблица</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- КОНТЕЙНЕР: MAIN + ASIDE (на мобилях в колонку, на десктопе в ряд) -->
+  <div id="main-aside-wrapper" class="container">
+
+    <main>
+      <section class="links-table">
+        <!-- СПИСОК ССЫЛОК -->
+        <ul id="inks1">
+          <li><a href="http://kubsu.ru/">kubsu (http)</a></li>
+          <li><a href="http://kubsu.ru/">kubsu (https)</a></li>
+          <li><a href="https://kubsu.ru/"><img src="images/Kub.png" alt="kubsu" style="max-width:100%;height:auto;"></a></li>
+          <li><a href="inside/inside_first.html">Внутренняя страница</a></li>
+          <li><a href="/Vasilisa/">На главную (сокращённая)</a></li>
+          <li><a href="#contacts">Переход к контактам на этой странице</a></li>
+          <li><a href="page.html?p1=1&p2=dwa&p3=3">Ссылка с 3 параметрами</a></li>
+          <li><a href="product.html?id=42">product?id=42</a></li>
+          <li><a href="index.html?id=34">Ссылка с id в URL</a></li>
+          <li><a href="./incatalog.html">Ссылка на страницу в текущем каталоге</a></li>
+          <li><a href="./about/about.html">Ссылка на страницу в каталоге about</a></li>
+          <li><a href="../home.html">Ссылка на страницу в каталоге уровнем выше</a></li>
+          <li><a href="../../roof.html">Ссылка на страницу в каталоге двумя уровнями выше</a></li>
+          <li><p>Подробнее читай в <a href="article.html">нашем материале</a> — ссылка встроена в абзац.</p></li>
+          <li><a href="https://example.com/page.html#section3" target="_blank" rel="noopener">Фрагмент на внешнем сайте</a></li>
+          <li>
+            <img src="images/KOT.png" usemap="#mykot" alt="kot example" style="max-width:100%;height:auto;">
+            <map name="mykot">
+              <area shape="rect" coords="0,0,370,695" href="Left-PoluKot.html" alt="rect">
+              <area shape="circle" coords="481,363,45" href="Right-Zrachok.html" alt="circle">
+            </map>
+          </li>
+          <li><a href="">Пустой href — ссылка на текущий URL (обновление)</a></li>
+          <li><a>Это элемент <code>a</code> без href — не гиперссылка</a></li>
+          <li><a href="https://external.example/page" rel="nofollow noopener noreferrer">nofollow ссылка</a></li>
+
+          <!-- Пример упорядоченного списка внутри: -->
+          <li>
+            <ol>
+              <li><a href="link1.html" title="Перейти к разделу 1">Раздел 1</a></li>
+              <li><a href="link2.html" title="Перейти к разделу 2">Раздел 2</a></li>
+              <li><a href="link3.html" title="Перейти к разделу 3">Раздел 3</a></li>
+            </ol>
+          </li>
+
+          <li><a href="ftp://user:password@ftp.example.com/path/to/file.zip">FTP-файл с авторизацией</a></li>
+        </ul>
+
+        <!-- ТАБЛИЦА  -->
+        <table id="tabl" class="data-table" aria-describedby="table-caption">
+          <caption id="table-caption">Таблица студентов </caption>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Имя</th>
+              <th>Фамилия</th>
+              <th>Возраст</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Василиса</td><td>Рубцова</td><td>18</td></tr>
+            <tr><td>2</td><td>Павел</td><td>Дуров</td><td>40</td></tr>
+            <tr><td>3</td><td>Сергей</td><td>Галицкий</td><td>58</td></tr>
+            <tr><td>4</td><td>Григорий</td><td>Перельман</td><td>59</td></tr> <tr><td>5</td><td>Альберт</td><td>Эйнштейн</td><td>76</td></tr>
+            <tr><td>6</td><td>Борис</td><td>Демидович</td><td>71</td></tr>
+            <tr><td colspan="3">Итого студентов</td><td>6</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- БОКОВАЯ ПАНЕЛЬ (форма + контакты) -->
+    <aside id="form">
+      <h2>Контактная форма</h2>
+      <form action="#" method="post" novalidate>
+        <label for="fio">ФИО</label>
+        <input id="fio" name="fio" type="text" placeholder="Иванов Иван Иванович" required>
+
+        <label for="tel">Телефон</label>
+        <input id="tel" name="tel" type="tel" placeholder="+7xxxxxxxxxx" pattern="\+?\d{10,15}" required>
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+
+        <label for="bday">Дата рождения</label>
+        <input id="bday" name="bday" type="date" required>
+
+        <fieldset>
+          <legend>Пол</legend>
+          <label><input type="radio" name="gender" value="male" required> Мужской</label>
+          <label><input type="radio" name="gender" value="female"> Женский</label>
+        </fieldset>
+
+        <label for="languages">Любимый язык программирования</label>
+        <select id="languages" name="languages[]" multiple size="6">
+          <option>Pascal</option><option>C</option><option>C++</option><option>JavaScript</option>
+          <option>PHP</option><option>Python</option><option>Java</option><option>Haskel</option>
+          <option>Clojure</option><option>Prolog</option><option>Scala</option>
+        </select>
+
+        <label for="bio">Биография</label>
+        <textarea id="bio" name="bio" rows="6" placeholder="Кратко о себе..."></textarea>
+
+        <label><input type="checkbox" name="agree" required> С контрактом ознакомлен(а)</label>
+
+        <button type="submit">Сохранить</button>
+      </form>
+    </aside>
+
+  </div> <!-- /#main-aside-wrapper -->
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Рубцова Василиса Евгеньевна</p>
+    </div>
+  </footer>
+
+</body>
+</html>
